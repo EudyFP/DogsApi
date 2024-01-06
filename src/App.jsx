@@ -9,7 +9,11 @@ const [useList, setList] = useState([])
 useEffect(()=>{
 fetch("https://apimocha.com/dogsapi/dogs")
 .then((res=>res.json()
-.then(data=> setList([...data]))))
+.then(data=> {
+  setList([...data])
+  console.log("datos traidos")
+})))
+console.log("useEffect ejecutado")
 },[])
 const IndexOfTheLastElementOfArray = useList.length - 1
 function atras(){
