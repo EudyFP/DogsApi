@@ -1,20 +1,25 @@
 import { useEffect, useState } from 'react'
-
-import './App.css'
 import { ImagesMapComponent } from './components/ImagesMap/ImagesMapComponent'
+import { dogData } from './services/fetchDogData'
+import './App.css'
 
 function App() {
 const [useIndex, setIndex] = useState(0)
 const [useList, setList] = useState([])
+
 useEffect(()=>{
-fetch("https://apimocha.com/dogsapi/dogs")
-.then((res=>res.json()
-.then(data=> {
-  setList([...data])
-  console.log("datos traidos")
-})))
-console.log("useEffect ejecutado")
+console.log("useEffect ejecutado");
+(async ()=>{
+  try{
+  const res = await dogData()
+  setList([...res])
+  } catch (e){
+    console.log(e.message);
+  }
+  })();
 },[])
+
+console.log("hola")
 const IndexOfTheLastElementOfArray = useList.length - 1
 function atras(){
 if(useIndex === 0){
