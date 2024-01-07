@@ -28,7 +28,7 @@ if(useIndex === 0){
   setIndex(useIndex - 1)
 }
 }
-
+console.log("hola")
 function siguiente(){
 if(useIndex === IndexOfTheLastElementOfArray){
   setIndex(0)
