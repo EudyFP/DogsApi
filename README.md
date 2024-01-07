@@ -8,3 +8,4 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
 PD: si no se mapea nada luego de varios request es porque el apimockup llego al limite de request y se bloquea a las 24horas vuelve a funcionar :p
+probando
